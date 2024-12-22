@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dug5tjavapy26"]
+
+[sub_resource type="GDScript" id="GDScript_xamnd"]
+script/source = "extends Area2D
+
+	
+
+
+func _on_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+"
+
+[node name="Head" type="Area2D"]
+collision_mask = 2
+script = SubResource("GDScript_xamnd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

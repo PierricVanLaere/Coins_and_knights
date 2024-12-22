@@ -16,7 +16,7 @@ func _on_timer_timeout() -> void:
 	
 func _process(delta: float) -> void:
 	if score == objectif:
-		coins_counter.text = str("Gagné !")
+		coins_counter.text = str("Gagné")
 		score = 0
 		Engine.time_scale = 0.5
 		timer.start()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bx8a4tkahjklx"]
+[gd_scene load_steps=12 format=3 uid="uid://bdjo6xqmb3w0w"]
 
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_2dg7y"]
 [ext_resource type="Texture2D" uid="uid://b2xe5e8mrkwm7" path="res://assets/sprites/slime_green.png" id="1_g3kto"]
-[ext_resource type="PackedScene" uid="uid://j3jol7goi37p" path="res://scenes/killzone.tscn" id="2_l2xu4"]
+[ext_resource type="PackedScene" uid="uid://cux1ceu0e0a1u" path="res://scenes/killzone.tscn" id="2_l2xu4"]
+[ext_resource type="PackedScene" uid="uid://dug5tjavapy26" path="res://scenes/head.tscn" id="5_6gwvo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bc0ej"]
 atlas = ExtResource("1_g3kto")
@@ -40,8 +41,11 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7higu"]
+size = Vector2(12, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65wfd"]
-size = Vector2(12, 13)
+size = Vector2(12, 12)
 
 [node name="Slime" type="Node2D"]
 script = ExtResource("1_2dg7y")
@@ -53,12 +57,6 @@ autoplay = "Idle"
 frame = 3
 frame_progress = 0.0191128
 
-[node name="killzone" parent="AnimatedSprite2D" instance=ExtResource("2_l2xu4")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/killzone"]
-position = Vector2(0, 5.5)
-shape = SubResource("RectangleShape2D_65wfd")
-
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(0, 6)
 target_position = Vector2(9, 0)
@@ -66,3 +64,18 @@ target_position = Vector2(9, 0)
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(0, 6)
 target_position = Vector2(-9, 0)
+
+[node name="Head" parent="." instance=ExtResource("5_6gwvo")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Head"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_7higu")
+one_way_collision = true
+
+[node name="killzone" parent="." instance=ExtResource("2_l2xu4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_65wfd")
+
+[connection signal="body_entered" from="Head" to="." method="_on_head_body_entered"]

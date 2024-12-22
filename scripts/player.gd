@@ -11,7 +11,7 @@ var side = 1
 func _physics_process(delta: float) -> void:
 	if is_rolling:
 		if not is_on_floor():
-			fall(delta)
+			velocity += get_gravity() * delta
 		move_and_slide()
 		return
 		
