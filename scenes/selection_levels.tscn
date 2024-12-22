@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dwg215wy32x8l"]
+[gd_scene load_steps=11 format=3 uid="uid://hqntwa5p11ld"]
 
 [ext_resource type="FontFile" uid="uid://bqmhkrkg8pnf5" path="res://assets/fonts/PixelOperator8.ttf" id="1_70pb5"]
 [ext_resource type="Script" path="res://scripts/selection_levels.gd" id="1_81bw0"]
-[ext_resource type="Texture2D" uid="uid://bxwb4x2h8d5nn" path="res://assets/background.png" id="2_pf8ys"]
+[ext_resource type="Texture2D" uid="uid://dab8qhl4ero0h" path="res://scenes/background.png" id="2_7s0b6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ve63b"]
-texture = ExtResource("2_pf8ys")
+texture = ExtResource("2_7s0b6")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eaftp"]
 

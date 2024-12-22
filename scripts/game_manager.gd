@@ -4,7 +4,7 @@ extends Node
 @onready var coins_counter = $"../Player/coins_counter"
 var score = 0
 var objectif = 10
-
+var knight = "default"
 
 func add_point():
 	score += 1

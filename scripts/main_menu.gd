@@ -5,7 +5,7 @@ func _on_selection_pressed() -> void:
 
 
 func _on_options_pressed() -> void:
-	pass # Replace with function body.
+		get_tree().change_scene_to_file("res://scenes/knight_selection.tscn")
 
 
 func _on_exit_pressed() -> void:
