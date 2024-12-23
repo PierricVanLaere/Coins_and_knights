@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://us5p33nun6l8"]
+[gd_scene load_steps=7 format=3 uid="uid://us5p33nun6l8"]
 
 [ext_resource type="FontFile" uid="uid://d32207lrp8rv" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_ji4te"]
 [ext_resource type="Script" path="res://scripts/knight_selection.gd" id="1_pswlw"]
 [ext_resource type="Texture2D" uid="uid://cp3x0r72roos4" path="res://scenes/knights/Capture d'écran 2024-12-22 212023.png" id="2_sfvjv"]
 [ext_resource type="Texture2D" uid="uid://dnmvhyak1y86v" path="res://scenes/knights/Capture d'écran 2024-12-22 212857.png" id="3_v7uxf"]
+[ext_resource type="Texture2D" uid="uid://c3g7hh8ifyu1t" path="res://scenes/knights/Capture d'écran 2024-12-23 173339.png" id="5_0fxro"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11ugx"]
 
@@ -65,6 +66,13 @@ texture_pressed = ExtResource("3_v7uxf")
 texture_hover = ExtResource("3_v7uxf")
 texture_focused = ExtResource("3_v7uxf")
 
+[node name="TextureButton3" type="TextureButton" parent="Panel/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_0fxro")
+texture_pressed = ExtResource("5_0fxro")
+texture_hover = ExtResource("5_0fxro")
+texture_focused = ExtResource("5_0fxro")
+
 [node name="Button" type="Button" parent="Panel"]
 layout_mode = 1
 offset_left = -1.0
@@ -77,4 +85,5 @@ text = "Retour"
 
 [connection signal="pressed" from="Panel/HBoxContainer/TextureButton" to="." method="_on_blue_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/TextureButton2" to="." method="_on_default_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/TextureButton3" to="." method="_on_red_pressed"]
 [connection signal="pressed" from="Panel/Button" to="." method="_on_back_pressed"]

@@ -4,6 +4,7 @@ const SPEED = 45
 var direction = 1
 var is_alive = true
 @onready var ray_cast_right = $RayCastRight 
+@onready var timer = $Timer
 @onready var ray_cast_left = $RayCastLeft
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -22,4 +23,11 @@ func _process(delta: float) -> void:
 
 func _on_head_body_entered(body: Node2D) -> void:
 	body.velocity.y = -300  # Ajuste cette valeur pour un rebond réaliste
-	self.is_alive=false
+	animated_sprite.play("death")
+	timer.start()
+
+
+
+
+func _on_timer_timeout() -> void:
+		self.is_alive=false
