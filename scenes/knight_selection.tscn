@@ -76,4 +76,5 @@ theme_override_font_sizes/font_size = 32
 text = "Retour"
 
 [connection signal="pressed" from="Panel/HBoxContainer/TextureButton" to="." method="_on_blue_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/TextureButton2" to="." method="_on_default_pressed"]
 [connection signal="pressed" from="Panel/Button" to="." method="_on_back_pressed"]
