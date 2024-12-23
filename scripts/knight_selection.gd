@@ -10,7 +10,7 @@ func _on_blue_pressed() -> void:
 	load_config()
 
 func _on_default_pressed() -> void:
-	config.set_value("Knight", "color", "default")
+	config.set_value("Knight", "color", "red")
 	config.save("user://config/settings.cfg")
 	load_config()
 
