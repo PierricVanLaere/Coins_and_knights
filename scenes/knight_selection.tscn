@@ -2,9 +2,9 @@
 
 [ext_resource type="FontFile" uid="uid://d32207lrp8rv" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_ji4te"]
 [ext_resource type="Script" path="res://scripts/knight_selection.gd" id="1_pswlw"]
-[ext_resource type="Texture2D" uid="uid://cp3x0r72roos4" path="res://scenes/knights/Capture d'écran 2024-12-22 212023.png" id="2_sfvjv"]
-[ext_resource type="Texture2D" uid="uid://dnmvhyak1y86v" path="res://scenes/knights/Capture d'écran 2024-12-22 212857.png" id="3_v7uxf"]
-[ext_resource type="Texture2D" uid="uid://c3g7hh8ifyu1t" path="res://scenes/knights/Capture d'écran 2024-12-23 173339.png" id="5_0fxro"]
+[ext_resource type="Texture2D" uid="uid://5hvys00yuu2n" path="res://scenes/knights/blue.png" id="3_rddbl"]
+[ext_resource type="Texture2D" uid="uid://dyfrkfthe1ij0" path="res://scenes/knights/default.png" id="4_c3ncl"]
+[ext_resource type="Texture2D" uid="uid://cna3580p1ty1u" path="res://scenes/knights/pixelcut-export.png" id="5_wjbyj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11ugx"]
 
@@ -54,31 +54,29 @@ theme_override_constants/separation = 20
 [node name="TextureButton" type="TextureButton" parent="Panel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("2_sfvjv")
-texture_pressed = ExtResource("2_sfvjv")
-texture_hover = ExtResource("2_sfvjv")
-texture_focused = ExtResource("2_sfvjv")
+texture_normal = ExtResource("3_rddbl")
+texture_pressed = ExtResource("3_rddbl")
+texture_hover = ExtResource("3_rddbl")
+texture_focused = ExtResource("3_rddbl")
 
 [node name="TextureButton2" type="TextureButton" parent="Panel/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("3_v7uxf")
-texture_pressed = ExtResource("3_v7uxf")
-texture_hover = ExtResource("3_v7uxf")
-texture_focused = ExtResource("3_v7uxf")
+texture_normal = ExtResource("4_c3ncl")
+texture_pressed = ExtResource("4_c3ncl")
+texture_hover = ExtResource("4_c3ncl")
+texture_focused = ExtResource("4_c3ncl")
 
 [node name="TextureButton3" type="TextureButton" parent="Panel/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("5_0fxro")
-texture_pressed = ExtResource("5_0fxro")
-texture_hover = ExtResource("5_0fxro")
-texture_focused = ExtResource("5_0fxro")
+texture_normal = ExtResource("5_wjbyj")
+texture_pressed = ExtResource("5_wjbyj")
+texture_hover = ExtResource("5_wjbyj")
+texture_focused = ExtResource("5_wjbyj")
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="Button" type="Button" parent="."]
 layout_mode = 1
-offset_left = -1.0
-offset_top = -3.0
-offset_right = 244.0
-offset_bottom = 155.0
+offset_right = 228.0
+offset_bottom = 72.0
 theme_override_fonts/font = ExtResource("1_ji4te")
 theme_override_font_sizes/font_size = 32
 text = "Retour"
@@ -86,4 +84,4 @@ text = "Retour"
 [connection signal="pressed" from="Panel/HBoxContainer/TextureButton" to="." method="_on_blue_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/TextureButton2" to="." method="_on_default_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/TextureButton3" to="." method="_on_red_pressed"]
-[connection signal="pressed" from="Panel/Button" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_back_pressed"]

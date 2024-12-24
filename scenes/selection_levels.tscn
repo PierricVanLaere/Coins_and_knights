@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://hqntwa5p11ld"]
+[gd_scene load_steps=12 format=3 uid="uid://hqntwa5p11ld"]
 
 [ext_resource type="FontFile" uid="uid://bqmhkrkg8pnf5" path="res://assets/fonts/PixelOperator8.ttf" id="1_70pb5"]
 [ext_resource type="Script" path="res://scripts/selection_levels.gd" id="1_81bw0"]
 [ext_resource type="Texture2D" uid="uid://dab8qhl4ero0h" path="res://scenes/background.png" id="2_7s0b6"]
+[ext_resource type="FontFile" uid="uid://d32207lrp8rv" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_fs5b6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ve63b"]
 texture = ExtResource("2_7s0b6")
@@ -319,4 +320,13 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_aml6u")
 theme_override_styles/normal = SubResource("StyleBoxFlat_0cl3a")
 text = "Coming Soon"
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+offset_right = 228.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("4_fs5b6")
+theme_override_font_sizes/font_size = 32
+text = "Retour"
+
 [connection signal="pressed" from="GridContainer/Button" to="." method="_on_1_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_back_pressed"]

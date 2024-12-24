@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnmvhyak1y86v"
-path="res://.godot/imported/Capture d'écran 2024-12-22 212857.png-abd80b4689dbc666c7864e151c0e119a.ctex"
+uid="uid://b5oys6ifsvlmh"
+path="res://.godot/imported/tile000.png-2a159aeb229974122f3bdcc67402042f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/knights/Capture d'écran 2024-12-22 212857.png"
-dest_files=["res://.godot/imported/Capture d'écran 2024-12-22 212857.png-abd80b4689dbc666c7864e151c0e119a.ctex"]
+source_file="res://scenes/knights/tile000.png"
+dest_files=["res://.godot/imported/tile000.png-2a159aeb229974122f3bdcc67402042f.ctex"]
 
 [params]
 
