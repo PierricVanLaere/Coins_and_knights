@@ -3,6 +3,8 @@ extends Node2D
 const SPEED = 45
 var direction = 1
 var is_alive = true
+var color = "default"
+var config = ConfigFile.new()
 @onready var ray_cast_right = $RayCastRight 
 @onready var timer = $Timer
 @onready var ray_cast_left = $RayCastLeft
@@ -22,12 +24,20 @@ func _process(delta: float) -> void:
 
 
 func _on_head_body_entered(body: Node2D) -> void:
-	body.velocity.y = -300  # Ajuste cette valeur pour un rebond réaliste
+	if body.get_node('AnimatedSprite2D').animation !="roll_"+color:
+		body.velocity.y = -200 
+	else:
+		body.velocity.x = -50 
 	animated_sprite.play("death")
 	timer.start()
 
+func _ready():
+	load_config()
 
-
+func load_config():
+	var err = config.load("user://config/settings.cfg")
+	if err == OK:
+		color = config.get_value("Knight", "color", null)
 
 func _on_timer_timeout() -> void:
 		self.is_alive=false
